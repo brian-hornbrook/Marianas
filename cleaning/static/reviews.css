@@ -1,0 +1,26 @@
+#reviews {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.stars {
+    color: #e1c819;
+}
+
+/* overview */
+#overview #reviews-amount {
+    color: blue;
+    padding: 0 10px;
+}
+
+/* reivew */
+.card {
+    background-color: #EC91C4;
+    border-color: #351D77;
+}
+
+.card .time {
+    margin: 0 10px;
+    color: #00000085;
+}

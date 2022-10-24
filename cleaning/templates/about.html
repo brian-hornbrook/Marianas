@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+    <h2>Why Mariana's Home Cleaning Service</h2>
+    <section id="company">
+        <div class="container">
+            <div>
+                <h5>Our Team</h5>
+                <p>Family owned and operated in the Fort Worth / Dallas Metroplex since 2009</p>
+                <img src="{% static '/images/kitchen.png' %}" alt="kitchen">
+            </div>
+            <div>
+                <h5>Our Goal</h5>
+                <p>Our goal is to deliver 100% satisfaction in every job</p>
+                <img src="{% static 'images/sink.jpg' %}" alt="sink">
+            </div>
+        </div>
+    </section>
+    <h2>Our Focus</h2>
+    <section id="focus">
+        <div class="container">
+            <div>
+                <h5>Quality</h5>
+                <p>Ensure all the client's needs and expectations are being met.</p>
+                <img src="{% static 'images/quality.jpg' %}" alt="quality">
+            </div>
+            <div>
+                <h5>Satisfaction</h5>
+                <p>We communicate with our clients to ensure we are delivering their needs and make sure we have them
+                    satisfied with our service.</p>
+                <img src="{% static 'images/communication.jpg' %}" alt="communicate">
+            </div>
+            <div>
+                <h5>Honesty</h5>
+                <p>Our team is responsible, respectful and trust worthy during our service.</p>
+                <img src="{% static 'images/honesty.jpg' %}" alt="honesty">
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
