@@ -60,7 +60,7 @@ header nav ul {
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
-    width: 70%;
+    width: 65%;
     padding: 0;
     margin: 0;
 }
@@ -97,6 +97,17 @@ header #account-link-area {
     flex-flow: row nowrap;
 }
 
+header #account-link:after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
 header #account-icon {
     height: 100%;
     display: flex;
@@ -104,8 +115,7 @@ header #account-icon {
 }
 
 header svg {
-    height: 12px;
-
+    height: 14px;
 }
 
 header #brand a {
@@ -127,8 +137,6 @@ header #account-content a {
     width: 100%;
 }
 
-
-
 header #account-link {
     color: white;
     font-size: 0.7rem;
@@ -140,16 +148,15 @@ header #account-content {
     border-top: 1px solid #ec91c4ad;
 }
 
-header #account-link:after {
-    display: inline-block;
-    margin-left: 0.255em;
-    vertical-align: 0.255em;
-    content: "";
-    border-top: 0.3em solid;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0;
-    border-left: 0.3em solid transparent;
+header #account-content button {
+    background-color: #351D77;
+    border: 0;
+    color: white;
+    font-size: 0.7rem;
+
 }
+
+
 
 
 

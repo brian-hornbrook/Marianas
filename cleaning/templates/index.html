@@ -11,6 +11,7 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
     <link rel="stylesheet" href="{% static 'about.css' %}">
     <link rel="stylesheet" href="{% static 'services.css' %}">
     <link rel="stylesheet" href="{% static 'reviews.css' %}">
@@ -29,26 +30,44 @@
                 <li><a href="/reviews">Reviews</a></li>
                 <li><a href="/services">Services</a></li>
                 <li><a href="/about">About Us</a></li>
-                    {% if user.is_authenticated %}
-                    <li id="brand"><a href="">logout</a></li>
-                    {% else %}
-                    <li id="brand">
-                        <div id="account-link-area">
-                            <span id="account-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    color="white" class="bi bi-person" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                                </svg>
-                                <p id="account-link" href="">Account</p>
-                            </span>
-                        </div>
-                        <div id="account-content" class="account">
-                            <a href="">Login</a>
-                            <a href="">Create Account</a>
-                        </div>
-                    </li>
-                    {% endif %}
+
+                {% if user.is_authenticated %}
+                <li id="brand">
+                    <div id="account-link-area">
+                        <span id="account-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                color="white" class="bi bi-person" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                            </svg>
+                            <p id="account-link" href="">{{ user|truncatechars:10 }}</p>
+                        </span>
+                    </div>
+                    <div id="account-content" class="account">
+                        <form action="/logout" method="POST">
+                            <button type="submit">Logout</button>
+                            {% csrf_token %}
+                        </form>
+                    </div>
+                </li>
+                {% else %}
+                <li id="brand">
+                    <div id="account-link-area">
+                        <span id="account-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                color="white" class="bi bi-person" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                            </svg>
+                            <p id="account-link" href="">Account</p>
+                        </span>
+                    </div>
+                    <div id="account-content" class="account">
+                        <a href="/login">Login</a>
+                        <a href="/signup">Create Account</a>
+                    </div>
+                </li>
+                {% endif %}
             </ul>
         </nav>
 

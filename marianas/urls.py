@@ -19,6 +19,9 @@ from cleaning import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('signup', views.signupUser),
+    path('login', views.loginUser),
+    path('logout', views.logoutUser),
     path('', views.home),
     path('about', views.about),
     path('services', views.services),

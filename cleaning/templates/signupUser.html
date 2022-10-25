@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="login" class="form-area">
+    <h2>Create an Account</h2>
+    {% if errors %}
+    <div class="errors-area">
+        <div class="alert alert-danger" role="alert">
+            {{ errors }}
+        </div>
+    </div>
+    {% endif %}
+    <form action="/signup" method="POST">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        {% csrf_token %}
+    </form>
+</div>
+</form>
+
+
+
+{% endblock %}
