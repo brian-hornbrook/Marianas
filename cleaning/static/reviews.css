@@ -1,26 +1,69 @@
+#review-area {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
 #reviews {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
+    align-items: center;
 }
 
-.stars {
-    color: #e1c819;
+#overview .stars {
+    color: yellow;
+    display: flex;
+    align-items: center;
 }
 
 /* overview */
-#overview #reviews-amount {
-    color: blue;
-    padding: 0 10px;
+#overview p {
+    margin: 5px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
 }
 
+#overview button {
+    margin: 20px 0;
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+
+/*** ADD REVIEW AREA ***/
+#add-review-area {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    margin-bottom: 30px;
+}
+
+
+
 /* reivew */
+.card-area {
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .card {
     background-color: #EC91C4;
     border-color: #351D77;
+    width: 100%;
+}
+
+.card .rating {
+    color: blue;
 }
 
 .card .time {
     margin: 0 10px;
     color: #00000085;
+}
+
+.review-stars {
 }

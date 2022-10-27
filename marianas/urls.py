@@ -25,5 +25,6 @@ urlpatterns = [
     path('', views.home),
     path('about', views.about),
     path('services', views.services),
-    path('reviews', views.reviews)
+    path('reviews', views.reviews),
+    path('addreview', views.addReview)
 ]

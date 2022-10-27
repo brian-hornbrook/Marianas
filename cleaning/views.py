@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
+from .forms import ReviewForm
+from .models import Review
 
 def signupUser(request):
     if request.method == 'GET':
@@ -55,4 +57,45 @@ def services(request):
     return render(request, 'services.html')
 
 def reviews(request):
-    return render(request, 'reviews.html')
+    if request.method == 'GET':
+        reviews = Review.objects.all()
+        totalReviews = reviews.__len__()
+        averageReviews = 0
+        for review in reviews:
+            averageReviews += review.rating
+            formatedR = []
+            for rating in range(review.rating):
+                formatedR.append("")
+                review.rating = formatedR
+        print(reviews)
+
+        averageReviews /= totalReviews
+        averageReviews = int(averageReviews)
+
+        return render(request, 'reviews.html', {
+            "reviews": reviews,
+            "totalReviews": totalReviews,
+            "averageReviews": averageReviews
+        })
+    
+def addReview(request):
+    if request.method == 'GET':
+        return render(request, 'addReview.html')
+    else:
+        rating = request.POST['rating']
+        description = request.POST['description']
+        if rating == "":
+            return render(request, 'addReview.html', {'errors': "you must choose a star rating"})
+        elif description == "":
+            return render(request, 'addReview.html', {'errors': "you must not leave the review section blank"})
+        else:
+            try:
+                form = ReviewForm(request.POST)
+                newReview = form.save(commit=False)
+                newReview.user = request.user
+                newReview.save()
+                return redirect('/reviews')
+            except ValueError:
+                return render(request, 'addReview.html', {'errors': "you entered in bad information"})
+
+        
