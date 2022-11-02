@@ -23,6 +23,7 @@ urlpatterns = [
     path('login', views.loginUser),
     path('logout', views.logoutUser),
     path('', views.home),
+    path('estemate', views.estemate),
     path('about', views.about),
     path('services', views.services),
     path('reviews', views.reviews),

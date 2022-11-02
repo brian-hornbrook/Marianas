@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block content %}
+<section id="estimate">
+    <h2>SCHEDULE<br>YOUR FREE<br>ESTIMATE</h2>
+    <p>Please fill out information below to schedule your free in-home estimate.</p>
+    <form action="" method="post">
+        <div>
+            <label>Residential Address</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <div class="address">
+            <div>
+                <label>City</label>
+                <input type="text" class="form-control city">
+            </div>
+            <div>
+                <label>State</label>
+                <input type="text" class="form-control state">
+            </div>
+            <div>
+                <label>Zip</label>
+                <input type="text" class="form-control zip">
+            </div>
+        </div>
+
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+</section>
+{% endblock %}
