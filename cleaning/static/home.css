@@ -1,5 +1,3 @@
-#home {
-    background: url('images/sink.jpg');
-    background-size: cover;
-    height: 200px;
+#description {
+    margin: 0 10%;
 }
