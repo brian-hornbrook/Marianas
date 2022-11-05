@@ -1,3 +1,71 @@
+.spacer {
+    display: flex;
+    justify-content: center;
+}
+
+.spacer hr {
+    width: 75%;
+    color: #005DD6;
+    opacity: 1;
+}
+
+
+
+/*** DESCRIPTION ***/
 #description {
-    margin: 0 10%;
+    margin-bottom: 20px;
+}
+
+#description img {
+    width: 100%;
+    opacity: 0.4;
+}
+
+#description #family-area {
+    position: absolute;
+    top: 190px;
+    text-align: center;
+}
+
+#description h3 {
+    color: #005DD6;
+}
+
+#description p {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #005DD6B3;
+}
+
+
+
+/*** BUSINESS ***/
+#business {
+    text-align: center;
+    margin: 20px 10%;
+}
+
+#business ul {
+    padding: 0;
+}
+
+#business ul li {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#business ul svg {
+    margin-right: 10px;
+    color: #005DD6;
+}
+
+#business ul i {
+    margin-right: 8px;
+    color: #005DD6;
+}
+
+#business ul p {
+    font-size: 0.8rem;
 }

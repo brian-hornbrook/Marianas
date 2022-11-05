@@ -60,7 +60,7 @@ header #brand-img {
 
 header #brand-name {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 
 header #brand-name-area {
@@ -78,15 +78,11 @@ header p {
 
 header h2 {
     color: #ff008ddb;
+    position: relative;
+    left: 30px;
 }
 
 header p {
     color: #ff008ddb;
     font-size: 0.8rem;
-}
-
-header #header-photo-area {
-    background: url('images/sink.jpg');
-    background-size: cover;
-    height: 200px;
 }
