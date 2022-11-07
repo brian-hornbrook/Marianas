@@ -5,8 +5,32 @@
 
 .spacer hr {
     width: 75%;
-    color: #005DD6;
     opacity: 1;
+    color: #ff008ddb;
+}
+
+section ul {
+    padding: 0;
+}
+
+section ul li {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 10px 0;
+}
+
+section ul svg {
+    margin-right: 10px;
+    color: #005DD6;
+}
+
+section ul i {
+    margin-right: 8px;
+    color: #005DD6;
+}
+
+section ul p {
+    font-size: 0.8rem;
 }
 
 
@@ -18,7 +42,6 @@
 
 #description img {
     width: 100%;
-    opacity: 0.4;
 }
 
 #description #family-area {
@@ -29,6 +52,8 @@
 
 #description h3 {
     color: #005DD6;
+    margin: 0 5%;
+    text-align: center;
 }
 
 #description p {
@@ -41,31 +66,94 @@
 
 /*** BUSINESS ***/
 #business {
+    margin: 20px 10%;
+}
+
+
+
+/*** SERVICES ***/
+#services {
     text-align: center;
     margin: 20px 10%;
 }
 
-#business ul {
-    padding: 0;
-}
-
-#business ul li {
+#services ul {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    margin: 20px 0;
+    flex-flow: column;
+    align-items: center;
 }
 
-#business ul svg {
-    margin-right: 10px;
-    color: #005DD6;
+#services ul li {
+    width: 60%;
 }
 
-#business ul i {
-    margin-right: 8px;
-    color: #005DD6;
+#services ul li svg,
+#services ul li i {
+    color: #ff008d70;
 }
 
-#business ul p {
-    font-size: 0.8rem;
+/* icons */
+#services #house {
+    color: brown;
+}
+
+#services #apartment {
+    color: #ffc580;
+}
+
+#services #office {
+    color: purple;
+}
+
+#services #commercial {
+    color: black;
+}
+
+#services #construction {
+    color: orange;
+}
+
+#services #senior {
+    color: grey;
+}
+
+#services #detailed {
+    color: #00f9;
+}
+
+#services #moving {
+    color: #d77900;
+}
+
+#services #holiday {
+    color: red;
+}
+
+#services #area {
+    color: black;
+}
+
+#services #leaf {
+    color: green;
+}
+
+
+#services #frequency {
+    background-color: #005DD633;
+}
+
+#services #frequency h3 {
+    margin: 0;
+}
+
+#services #frequency ul li {
+    display: list-item;
+    font-size: 0.85rem;
+    margin: 3px 0;
+    width: 40%;
+    text-align: left;
+}
+
+#services #frequency ul li::marker {
+    color: #E0467C;
 }
