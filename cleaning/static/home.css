@@ -1,12 +1,37 @@
 .spacer {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .spacer hr {
     width: 75%;
-    color: #005DD6;
     opacity: 1;
+    color: #ff008ddb;
+}
+
+section ul {
+    padding: 0;
+}
+
+section ul li {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 10px 0;
+}
+
+section ul svg {
+    margin-right: 10px;
+    color: #005DD6;
+}
+
+section ul i {
+    margin-right: 8px;
+    color: #005DD6;
+}
+
+section ul p {
+    font-size: 0.8rem;
 }
 
 
@@ -18,7 +43,6 @@
 
 #description img {
     width: 100%;
-    opacity: 0.4;
 }
 
 #description #family-area {
@@ -29,6 +53,8 @@
 
 #description h3 {
     color: #005DD6;
+    margin: 0 5%;
+    text-align: center;
 }
 
 #description p {
@@ -41,31 +67,99 @@
 
 /*** BUSINESS ***/
 #business {
+    margin: 20px 10%;
+}
+
+
+
+/*** services-info ***/
+#services-info {
     text-align: center;
     margin: 20px 10%;
 }
 
-#business ul {
-    padding: 0;
-}
-
-#business ul li {
+#services-info ul {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    margin: 20px 0;
+    flex-flow: column;
+    align-items: center;
 }
 
-#business ul svg {
-    margin-right: 10px;
-    color: #005DD6;
+#services-info ul li {
+    width: 60%;
 }
 
-#business ul i {
-    margin-right: 8px;
-    color: #005DD6;
+#services-info ul li svg,
+#services-info ul li i {
+    color: #ff008d70;
 }
 
-#business ul p {
-    font-size: 0.8rem;
+/* icons */
+#services-info #house {
+    color: brown;
+}
+
+#services-info #apartment {
+    color: #ffc580;
+}
+
+#services-info #office {
+    color: purple;
+}
+
+#services-info #commercial {
+    color: black;
+}
+
+#services-info #construction {
+    color: orange;
+}
+
+#services-info #senior {
+    color: grey;
+}
+
+#services-info #detailed {
+    color: #00f9;
+}
+
+#services-info #moving {
+    color: #d77900;
+}
+
+#services-info #holiday {
+    color: red;
+}
+
+#services-info #area {
+    color: black;
+}
+
+#services-info #leaf {
+    color: green;
+}
+
+
+#frequency {
+    background-color: #005DD633;
+    padding: 20px;
+}
+
+#frequency h3 {
+    margin: 0;
+}
+
+#frequency ul li {
+    display: list-item;
+    font-size: 0.85rem;
+    margin: 3px 0;
+    width: 40%;
+    text-align: left;
+}
+
+#frequency ul li::marker {
+    color: #E0467C;
+}
+
+#frequency button {
+    border-radius: 25px;
 }

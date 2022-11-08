@@ -1,0 +1,72 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<section id="services">
+    <h2>WHAT WE DO DURING OUR VISIT EACH TIME AT YOUR HOME</h2>
+    <!-- kitchen -->
+    <div>
+        <img src="{% static 'images/kitchen.jpg' %}" alt="kitchen">
+        <h3>Kitchen and Dinning</h3>
+        <ul>
+            <li>Clean the outside of appliances</li>
+            <li>Microwave in & out</li>
+            <li>Clean & disinfect all countertops</li>
+            <li>Clean tables & chairs</li>
+            <li>Dust & spot glass</li>
+            <li>Dust light fixtures</li>
+            <li>Empty & replace garbage</li>
+            <li>Vacuum & mop</li>
+            <li>Wipe cabinet door</li>
+        </ul>
+    </div>
+    <!-- bedrooms -->
+    <div>
+        <img src="{% static 'images/bedroom.jpg' %}" alt="bedroom">
+        <h3>Bedrooms</h3>
+        <ul>
+            <li>Dust off all furniture</li>
+            <li>Dust ceiling fans, blinds & baseboards</li>
+            <li>Make the beds tidy (provide the clean sheets)</li>
+            <li>Dust picture frame & decoration</li>
+            <li>Vacuum & mop</li>
+        </ul>
+    </div>
+    <!-- bathrooms -->
+    <div>
+        <img src="{% static 'images/bathroom.jpg' %}" alt="bathroom">
+        <h3>Bathrooms</h3>
+        <ul>
+            <li>Clean counters, sinks & cabinets</li>
+            <li>Clean mirrors</li>
+            <li>Clean & disinfect toilets, bathtubs & showers</li>
+            <li>Wipe cabinets</li>
+            <li>Dust light fixtures & baseboards</li>
+            <li>Vacuum & mop</li>
+        </ul>
+    </div>
+    <!-- laundry room -->
+    <div>
+        <img src="{% static 'images/laundry.jpg' %}" alt="laundry">
+        <h3>Laundry Room</h3>
+        <ul>
+            <li>Dust & disinfect</li>
+            <li>Empty & replace garbage</li>
+            <li>Vacuum & mop</li>
+        </ul>
+    </div>
+    <!-- other areas -->
+    <div>
+        <img src="{% static 'images/entry.jpg' %}" alt="entry way">
+        <h3>Laundry Room</h3>
+        <ul>
+            <li>Dust & disinfect</li>
+            <li>Tidy area</li>
+            <li>Dust railing & bannister</li>
+            <li>Dust decorations</li>
+            <li>Dust ceilling fans, blinds & baseboards</li>
+            <li>Empty & replace garbage</li>
+            <li>Vacuum & mop</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

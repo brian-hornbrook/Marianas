@@ -1,0 +1,121 @@
+#services {
+    letter-spacing: 0.15rem;
+    color: #000070;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#services {
+    margin: 5%;
+}
+
+#services .spacer hr {
+    margin: 25px;
+    width: 20%;
+    border: 1px solid #005DD6;
+}
+
+#services h2 {
+    text-align: center;
+}
+
+#services img {
+    width: 100%;
+}
+
+#services h3 {
+    color: black;
+    margin: 10px;
+    text-align: center;
+}
+
+#services ul {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 0 0 20px 35px;
+}
+
+#services ul li {
+    width: 75%;
+    display: list-item;
+    font-size: 0.7rem;
+    width: 100%;
+    margin: 0;
+    color: grey;
+}
+
+
+
+
+
+
+#estimate {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    font-family: 'GFS Didot', serif;
+}
+
+#estimate h2 {
+    letter-spacing: 0.15rem;
+    color: #000070;
+}
+
+#estimate p {
+    font-size: 0.6rem;
+    font-weight: 900;
+    color: #000000bf;
+}
+
+#estimate form {
+    text-align: center;
+    width: 75%;
+    display: flex;
+    flex-flow: column;
+}
+
+#estimate div {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+}
+
+#estimate label {
+    font-size: 0.7rem;
+    color: #00000082;
+}
+
+#estimate input {
+    background-color: #80808026;
+    font-size: 0.7rem;
+    width: 250px;
+}
+
+#estimate .address {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#estimate .city {
+    width: 120px;
+}
+
+#estimate .state {
+    width: 100px;
+}
+
+#estimate .zip {
+    width: 100px;
+}
+
+#estimate button {
+    background-color: white;
+    border: 0.0001em solid #ff008ddb;
+    border-radius: 3px;
+    margin: 15px;
+    padding: 3px 15px;
+}

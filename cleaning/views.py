@@ -50,8 +50,8 @@ def logoutUser(request):
 def home(request):
     return render(request, 'home.html')
 
-def estemate(request):
-    return render(request, 'estemate.html')
+def services(request):
+    return render(request, 'services.html')
 
 def about(request):
     return render(request, 'about.html')

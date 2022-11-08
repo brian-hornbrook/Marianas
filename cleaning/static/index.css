@@ -10,7 +10,7 @@ header ul {
     flex-flow: row nowrap;
     padding: 0;
     margin: 0;
-    background-color: #ff008ddb;
+    background-color: #ff008d70;
 }
 
 header li {
@@ -35,12 +35,12 @@ header span {
 
 header a {
     text-decoration: none;
-    color: #ffffffc7;
+    color: white;
     font-size: 0.7rem;
 }
 
 header a:visited {
-    color: #ffffffc7;
+    color: white;
 }
 
 header a:hover {
