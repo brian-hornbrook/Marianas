@@ -1,6 +1,5 @@
 #services {
     letter-spacing: 0.15rem;
-    color: #000070;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -10,14 +9,8 @@
     margin: 5%;
 }
 
-#services .spacer hr {
-    margin: 25px;
-    width: 20%;
-    border: 1px solid #005DD6;
-}
-
-#services h2 {
-    text-align: center;
+#services #title {
+    color: #000070;
 }
 
 #services img {

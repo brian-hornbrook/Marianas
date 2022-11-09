@@ -160,6 +160,37 @@ section ul p {
     color: #E0467C;
 }
 
-#frequency button {
-    border-radius: 25px;
+
+
+/*** QUESTIONS ***/
+#questions {
+    text-align: center;
+    margin: 0 5%;
+}
+
+#questions div {
+    margin-top: 20px;
+}
+
+#questions h6 {
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+#questions p {
+    font-size: 0.7rem;
+    color: grey;
+}
+
+
+
+/*** MOTTO ***/
+#motto {
+    display: flex;
+    justify-content: center;
+}
+
+#motto h6 {
+    color: #000070b5;
+    width: 75%;
 }
