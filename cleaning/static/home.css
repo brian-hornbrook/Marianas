@@ -79,6 +79,7 @@ section ul p {
 }
 
 #services-info ul {
+
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -137,7 +138,6 @@ section ul p {
 #services-info #leaf {
     color: green;
 }
-
 
 #frequency {
     background-color: #005DD633;
