@@ -60,7 +60,7 @@ section ul p {
 #description p {
     text-align: center;
     font-size: 0.85rem;
-    color: #005DD6B3;
+    color: #5B9EDC;
 }
 
 
@@ -187,10 +187,62 @@ section ul p {
 /*** MOTTO ***/
 #motto {
     display: flex;
+    flex-flow: column;
     justify-content: center;
+    align-items: center;
+    margin: 20px;
 }
 
 #motto h6 {
     color: #000070b5;
     width: 75%;
+}
+
+#motto button {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 3px 17px;
+}
+
+#motto span {
+    margin-right: 3px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+/*** reviews ***/
+#reviews {
+    text-align: center;
+    margin: 15px;
+}
+
+#reviews h5 {
+    margin: 0;
+}
+
+#reviews #star-area {
+    margin: 2px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#reviews .stars {
+    display: flex;
+    align-items: center;
+    margin: 0 2px;
+}
+
+#reviews .stars svg {
+    color: rgb(66, 139, 202);
+    width: 12px;
+}
+
+#reviews p {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
 }

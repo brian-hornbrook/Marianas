@@ -13,8 +13,11 @@ header ul {
     background-color: #ff008d70;
 }
 
-header li {
+header ul div {
     width: 50%;
+}
+
+header li {
     list-style-type: none;
     display: flex;
     justify-content: center;
@@ -24,7 +27,7 @@ header li {
 }
 
 header #separator {
-    height: 30px;
+    height: 55px;
     width: 1px;
     border-right: 1px solid #000000b5;
 }
@@ -49,13 +52,11 @@ header a:hover {
 }
 
 header li svg {
-    color: white;
     height: 13px;
 }
 
 header #brand-img {
     width: 100%;
-    height: 40px;
 }
 
 header #brand-name {
@@ -65,8 +66,13 @@ header #brand-name {
 
 header #brand-name-area {
     position: relative;
-    top: -20px;
-    left: 20px;
+    top: -05px;
+    width: 100%;
+}
+
+header #brand-name-area p {
+    color: #CB2A6B;
+    font-size: 0.55rem;
 }
 
 header h2,
@@ -80,9 +86,4 @@ header h2 {
     color: #ff008ddb;
     position: relative;
     left: 30px;
-}
-
-header p {
-    color: #ff008ddb;
-    font-size: 0.8rem;
 }
