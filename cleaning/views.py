@@ -5,6 +5,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 from .forms import ReviewForm
 from .models import Review
+import datetime
 
 
 def signupUser(request):
@@ -16,20 +17,16 @@ def signupUser(request):
                 user = User.objects.create_user(
                     request.POST['username'], password=request.POST['password1'])
                 user.save()
-                print(user)
                 login(request, user)
                 return redirect('/')
             except IntegrityError:
-                print('already exists')
                 return render(request, 'signupUser.html', {'form': UserCreationForm(), 'errors': "that username or password was already taken"})
         else:
-            print("passwords din't match")
             return render(request, 'signupUser.html', {'form': UserCreationForm(), 'errors': "your passwords did not match"})
 
 
 def loginUser(request):
     if request.method == 'GET':
-        print("loaded")
         return render(request, 'login.html', {'form': AuthenticationForm()})
     else:
         errors = ""
@@ -46,10 +43,8 @@ def logoutUser(request):
     if request.method == 'POST':
         logout(request)
         return redirect('/')
-        print("did log out")
     else:
         return render(request, 'home.html')
-        print("didn't logout")
 
 
 def home(request):
@@ -92,6 +87,7 @@ def reviews(request):
         for review in reviews:
             averageReviews += review.rating
             formatedReviews = []
+            review.datecreated = review.datecreated.strftime("%B %d, %Y")
             for rating in range(review.rating):
                 formatedReviews.append("")
                 review.rating = formatedReviews
@@ -102,30 +98,10 @@ def reviews(request):
             formatedAverageReviews.append("")
 
         return render(request, 'reviews.html', {
+            "reviews": reviews,
             "totalReviews": totalReviews,
             "averageReviews": formatedAverageReviews
         })
-
-    # if request.method == 'GET':
-    #     reviews = Review.objects.all()
-    #     totalReviews = reviews.__len__()
-    #     averageReviews = 0
-    #     for review in reviews:
-    #         averageReviews += review.rating
-    #         formatedR = []
-    #         for rating in range(review.rating):
-    #             formatedR.append("")
-    #             review.rating = formatedR
-    #     print(reviews)
-
-    #     averageReviews /= totalReviews
-    #     averageReviews = int(averageReviews)
-
-    #     return render(request, 'reviews.html', {
-    #         "reviews": reviews,
-    #         "totalReviews": totalReviews,
-    #         "averageReviews": averageReviews
-    #     })
 
 
 def addReview(request):

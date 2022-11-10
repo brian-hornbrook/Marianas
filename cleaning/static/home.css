@@ -213,33 +213,33 @@ section ul p {
 
 
 /*** reviews ***/
-#reviews {
+.reviews {
     text-align: center;
     margin: 15px;
 }
 
-#reviews h5 {
+.reviews h5 {
     margin: 0;
 }
 
-#reviews #star-area {
+.reviews #star-area {
     margin: 2px;
     display: flex;
     flex-flow: row nowrap;
 }
 
-#reviews .stars {
+.reviews .stars {
     display: flex;
     align-items: center;
     margin: 0 2px;
 }
 
-#reviews .stars svg {
+.reviews .stars svg {
     color: rgb(66, 139, 202);
     width: 12px;
 }
 
-#reviews p {
+.reviews p {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
