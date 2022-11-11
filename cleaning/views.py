@@ -50,21 +50,23 @@ def logoutUser(request):
 def home(request):
     if request.method == 'GET':
         reviews = Review.objects.all()
-        totalReviews = reviews.__len__()
-        averageReviews = 0
-        for review in reviews:
-            averageReviews += review.rating
-            formatedReviews = []
-        averageReviews /= totalReviews
-        averageReviews = int(averageReviews)
-        formatedAverageReviews = []
-        for average in range(averageReviews):
-            formatedAverageReviews.append("")
+        if reviews:
+            totalReviews = reviews.__len__()
+            averageReviews = 0
+            for review in reviews:
+                averageReviews += review.rating
+                formatedReviews = []
+            averageReviews /= totalReviews
+            averageReviews = int(averageReviews)
+            formatedAverageReviews = []
+            for average in range(averageReviews):
+                formatedAverageReviews.append("")
 
-        return render(request, 'home.html', {
-            "totalReviews": totalReviews,
-            "averageReviews": formatedAverageReviews
-        })
+            return render(request, 'home.html', {
+                "totalReviews": totalReviews,
+                "averageReviews": formatedAverageReviews
+            })
+        return render(request,'home.html')
 
 
 def services(request):
@@ -82,26 +84,29 @@ def services(request):
 def reviews(request):
     if request.method == 'GET':
         reviews = Review.objects.all()
-        totalReviews = reviews.__len__()
-        averageReviews = 0
-        for review in reviews:
-            averageReviews += review.rating
-            formatedReviews = []
-            review.datecreated = review.datecreated.strftime("%B %d, %Y")
-            for rating in range(review.rating):
-                formatedReviews.append("")
-                review.rating = formatedReviews
-        averageReviews /= totalReviews
-        averageReviews = int(averageReviews)
-        formatedAverageReviews = []
-        for average in range(averageReviews):
-            formatedAverageReviews.append("")
+        if reviews:
+            totalReviews = reviews.__len__()
+            averageReviews = 0
+            for review in reviews:
+                averageReviews += review.rating
+                formatedReviews = []
+                review.datecreated = review.datecreated.strftime("%B %d, %Y")
+                for rating in range(review.rating):
+                    formatedReviews.append("")
+                    review.rating = formatedReviews
+            averageReviews /= totalReviews
+            averageReviews = int(averageReviews)
+            formatedAverageReviews = []
+            for average in range(averageReviews):
+                formatedAverageReviews.append("")
 
-        return render(request, 'reviews.html', {
-            "reviews": reviews,
-            "totalReviews": totalReviews,
-            "averageReviews": formatedAverageReviews
-        })
+            return render(request, 'reviews.html', {
+                "reviews": reviews,
+                "totalReviews": totalReviews,
+                "averageReviews": formatedAverageReviews
+            })
+        else:
+            return render(request, 'reviews.html')
 
 
 def addReview(request):
@@ -109,16 +114,22 @@ def addReview(request):
         return render(request, 'addReview.html')
     else:
         rating = request.POST['rating']
+        guest = request.POST['guest']
         description = request.POST['description']
         if rating == "":
             return render(request, 'addReview.html', {'errors': "you must choose a star rating"})
+        elif guest == "":
+            return render(request, 'addReview.html', {'errors': "you must enter your guest name"})
         elif description == "":
             return render(request, 'addReview.html', {'errors': "you must not leave the review section blank"})
         else:
             try:
                 form = ReviewForm(request.POST)
                 newReview = form.save(commit=False)
-                newReview.user = request.user
+                if guest:
+                    newReview.user = guest
+                else:
+                    newReview.user = request.user
                 newReview.save()
                 return redirect('/reviews')
             except ValueError:

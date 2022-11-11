@@ -3,6 +3,7 @@
 
 {% block content %}
 <section id="reviews" class="reviews">
+    {% if reviews %}
     <div id="overview">
         <h3>Check out all our reviews</h3>
         <h5>Average</h5>
@@ -19,6 +20,9 @@
             </span>
             of {{ totalReviews }} Reviews
         </p>
+        <a id="add-review" href="/addreview">
+            <button type="button" class="btn btn-success">Add a Review</button>
+        </a>
     </div>
     <div id="content">
         <!-- reviews -->
@@ -26,7 +30,7 @@
         <!-- each review -->
         <div class="review">
             <div class="review-icon">
-                <span>{{ review.user }}</span>
+                <span>{{ review.user|truncatechars:2 }}</span>
             </div>
             <div class="content-area">
                 <div class="review-info">
@@ -51,5 +55,10 @@
         </div>
         {% endfor %}
     </div>
+    {% endif %}
+    <h3>No reviews Yet</h3>
+    <a id="see-reviews" href="/addreview">
+        <button type="button" class="btn btn-success">add a review</button>
+    </a>
 </section>
 {% endblock %}

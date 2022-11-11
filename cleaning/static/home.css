@@ -246,3 +246,15 @@ section ul p {
     justify-content: center;
     font-size: 0.8rem;
 }
+
+.reviews #see-reviews {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.reviews button {
+    height: 25px;
+    padding: 0 15px;
+    display: flex;
+}

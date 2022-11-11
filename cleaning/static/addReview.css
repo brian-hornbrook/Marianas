@@ -1,0 +1,103 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-area {
+    margin: 30px;
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.form-area h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-area .errors-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-area .alert {
+    width: fit-content;
+}
+
+.form-area .mb-3 {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+
+.form-area li {
+    list-style-type: none;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+form .mb-3 {
+    width: 100%;
+}
+
+form p {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+form label,
+form input,
+form button {
+    width: 70%;
+}
+
+
+
+/*** REVIEW ***/
+#add-review-area {
+    display: flex;
+    justify-content: center;
+}
+
+#add-review-form .mb-3 {
+    text-align: center;
+}
+
+#add-review-form .mb-3 input,
+#add-review-form .mb-3 textarea {
+    width: 100%;
+}
+
+#add-review-area .stars {
+    display: flex;
+    flex-flow: row nowrap;
+    color: #e1c819;
+}
+
+#add-review-area .stars div {
+    margin: 0 5px;
+}
+
+.stars-emptied {
+    display: none;
+}
+
+#add-review-area .form-control {
+    width: 80%;
+    border: 1px solid #5B9EDC;
+}
+
+#add-review-area button {
+    width: 200px;
+}

@@ -2,6 +2,20 @@
     margin: 20px;
 }
 
+#overview #add-review {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#overview button {
+    height: 25px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #content {
     margin: 20px 0;
 }
@@ -18,18 +32,23 @@
 
 .review .content-area {
     width: 100%;
+    display: flex;
+    flex-flow: column;
 }
 
 .review .review-info {
     width: 100%;
     display: flex;
-    flex-flow: row nowrap;
+    justify-content: space-between;
+    /* flex-flow: row nowrap; */
 }
 
 .review .info {
     display: flex;
     flex-flow: row nowrap;
-    align-items: flex-start;
+    /* align-items: flex-start; */
+    width: fit-content;
+    clear: both;
 }
 
 .review .review-icon {
@@ -47,7 +66,8 @@
 .review .user {
     margin: 0 5px;
     font-weight: 900;
-    display: block;
+    display: flex;
+    flex-flow: row nowrap;
 }
 
 .review .user::first-letter {
@@ -55,9 +75,10 @@
 }
 
 .review .date {
-    display: flex;
+    display: block;
+    float: right;
     justify-content: flex-end;
-    width: 100%;
+    /* width: 100%; */
     font-size: 0.7rem;
     color: grey;
 }
@@ -66,7 +87,7 @@
     /* width: 100%; */
     justify-content: flex-start;
     color: #005DD6C4;
-    display: flex;
+    /* display: flex; */
     flex-flow: row nowrap;
     max-width: 100%;
     overflow-wrap: break-word;
