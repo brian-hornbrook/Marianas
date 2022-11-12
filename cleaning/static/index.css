@@ -48,7 +48,6 @@ header a:visited {
 
 header a:hover {
     color: #ffffffc7;
-    ;
 }
 
 header li svg {
@@ -57,11 +56,6 @@ header li svg {
 
 header #brand-img {
     width: 100%;
-}
-
-header #brand-name {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3.5rem;
 }
 
 header #brand-name-area {
@@ -86,4 +80,46 @@ header h2 {
     color: #ff008ddb;
     position: relative;
     left: 30px;
+}
+
+
+
+/*** TABLET ***/
+@media(min-width: 768px) {
+    header {
+        display: flex;
+        flex-flow: row-reverse nowrap;
+    }
+
+    header #brand-img {
+        width: 50%;
+    }
+
+    header ul {
+        width: 50%;
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    header ul div {
+        margin: 0 35%;
+    }
+
+    header li {
+        justify-content: left;
+        padding: 18px 0;
+        margin: 0;
+    }
+
+    header li a {
+        font-size: 1.1rem;
+    }
+
+    header li a::hover {
+        color: #ffffffc7;
+    }
+
+    header span {
+        display: none;
+    }
 }

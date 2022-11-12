@@ -38,7 +38,7 @@ section ul p {
 
 /*** DESCRIPTION ***/
 #description {
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 #description img {
@@ -70,12 +70,19 @@ section ul p {
     margin: 20px 10%;
 }
 
+#business svg {
+    width: 16px;
+}
+
+#business i.icon {
+    margin: 0 10px 0 0;
+}
+
 
 
 /*** services-info ***/
 #services-info {
     text-align: center;
-    margin: 20px 10%;
 }
 
 #services-info ul {
@@ -257,4 +264,140 @@ section ul p {
     height: 25px;
     padding: 0 15px;
     display: flex;
+}
+
+
+
+/*** DESKTOP ***/
+@media (min-width: 768px) {
+    h3 {
+        font-size: 1.7rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    svg {
+        height: 25px;
+        width: 25px;
+    }
+
+    i.icon {
+        font-size: 1.5rem;
+    }
+
+
+
+    /*** description ***/
+    #description {
+        margin: 50px;
+    }
+
+    #description h3 {
+        margin: 0 15%;
+    }
+
+    #description p {
+        font-size: 1.1rem;
+        margin: 0 15%;
+    }
+
+
+
+    /*** business ***/
+    #business {
+        margin: 30px 23%;
+    }
+
+    #business h3 {
+        text-align: center;
+    }
+
+    #business li {
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    #business p {
+        font-size: 1.2rem;
+    }
+
+
+    /*** SERVICES ***/
+    #services-info {
+        margin: 30px;
+    }
+
+    #services-info p {
+        font-size: 1.2rem;
+    }
+
+    #services-info ul {
+        margin: 0 10%;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    #services-info ul li {
+        width: 50%;
+        font-size: 1.2rem;
+        padding-left: 30px;
+    }
+
+    #services-info ul li i {
+        padding: 0 30px 0 5px;
+    }
+
+    #frequency ul {
+        margin-bottom: 20px;
+        margin: 0 0 20px 37%;
+    }
+
+    #frequency ul li {
+        width: 100%;
+    }
+
+    #frequency button {
+        font-size: 1.2rem;
+        padding: 5px 25px;
+    }
+
+
+
+    /*** QUESTIONS ***/
+    #questions {
+        margin: 30px 0;
+    }
+
+    #questions h6 {
+        font-size: 1.1rem;
+    }
+
+    #questions p {
+        font-size: 1.1rem;
+    }
+
+    #motto h6 {
+        font-size: 1.4rem;
+        margin: 20px;
+    }
+
+    #motto button {
+        font-size: 1.4rem;
+        padding: 5px 25px;
+    }
+
+
+
+    /*** REVIEWS ***/
+    .reviews {
+        margin: 30px;
+    }
+
+    .reviews button {
+        font-size: 1.6rem;
+        padding: 5px 25px;
+        height: 50px;
+    }
 }
