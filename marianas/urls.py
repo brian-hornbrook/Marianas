@@ -27,5 +27,6 @@ urlpatterns = [
     path('about', views.about),
     path('services', views.services),
     path('reviews', views.reviews),
-    path('addreview', views.addReview)
+    path('addreview', views.addReview),
+    path('addClient', views.addClient)
 ]

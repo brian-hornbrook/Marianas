@@ -134,3 +134,7 @@ def addReview(request):
                 return redirect('/reviews')
             except ValueError:
                 return render(request, 'addReview.html', {'errors': "you entered in bad information"})
+
+def addClient(request):
+    if request.method == 'GET':
+        return render(request, 'addClient.html')

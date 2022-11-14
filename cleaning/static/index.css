@@ -5,31 +5,42 @@ body {
 
 
 /*** HEADER ***/
-header ul {
+header div {
     display: flex;
     flex-flow: row nowrap;
+}
+
+header ul {
     padding: 0;
-    margin: 0;
+}
+
+header div {
+    flex-flow: row wrap;
     background-color: #ff008d70;
 }
 
-header ul div {
-    width: 50%;
+header #contact {
+    display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 header li {
     list-style-type: none;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 5px;
+    padding: 15px 0 15px 35px;
     height: 20px;
+    width: 50%;
+    box-sizing: border-box;
 }
 
-header #separator {
-    height: 55px;
-    width: 1px;
-    border-right: 1px solid #000000b5;
+header .separator {
+    border-left: 1px solid black;
+}
+
+header .hr {
+    border-bottom: 1px solid #fff3;
 }
 
 header span {
@@ -40,6 +51,9 @@ header a {
     text-decoration: none;
     color: white;
     font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    margin: 5px;
 }
 
 header a:visited {
@@ -51,22 +65,11 @@ header a:hover {
 }
 
 header li svg {
-    height: 13px;
+    height: 11px;
 }
 
 header #brand-img {
     width: 100%;
-}
-
-header #brand-name-area {
-    position: relative;
-    top: -05px;
-    width: 100%;
-}
-
-header #brand-name-area p {
-    color: #CB2A6B;
-    font-size: 0.55rem;
 }
 
 header h2,
@@ -86,40 +89,100 @@ header h2 {
 
 /*** TABLET ***/
 @media(min-width: 768px) {
+    header li {
+        padding: 25px 0 25px 90px;
+    }
+
+    header li a {
+        font-size: 1.3rem;
+    }
+
+    header li a svg {
+        height: 17px;
+        margin-right: 5px;
+    }
+
+    header #separator {
+        height: 85px;
+    }
+}
+
+
+
+/*** DESKTOP ***/
+@media(min-width: 1200px) {
     header {
         display: flex;
         flex-flow: row-reverse nowrap;
     }
 
-    header #brand-img {
-        width: 50%;
-    }
-
     header ul {
-        width: 50%;
+        width: 55%;
+        display: flex;
+        flex-flow: row-reverse nowrap;
+    }
+
+    header #contact {
+        display: flex;
         flex-flow: column;
-        justify-content: center;
+        padding: 20px 0;
+        background-color: white;
+        width: 45%;
     }
 
-    header ul div {
-        margin: 0 35%;
+    header #contact #button {
+        background-color: #FF3385;
+        padding: 5px 10px;
+        border-radius: 5px;
     }
 
-    header li {
-        justify-content: left;
-        padding: 18px 0;
-        margin: 0;
+    header #contact #button a {
+        color: white;
     }
 
-    header li a {
-        font-size: 1.1rem;
+    header #brand-img {
+        width: 45%;
     }
 
-    header li a::hover {
-        color: #ffffffc7;
+    header #contact li {
+        padding: 5px 15px;
+        width: 320px;
+        height: fit-content;
     }
 
-    header span {
-        display: none;
+    header .separator,
+    header .hr {
+        border: 0;
+    }
+
+    header #contact li div a {
+        color: white;
+    }
+
+    header #contact #link {
+        color: #FF3385;
+        font-size: 1.5rem;
+    }
+
+    header #contact svg {
+        height: 35px;
+    }
+
+    header #links {
+        background-color: white;
+        width: 55%;
+        margin: 20px 0;
+        flex-flow: row wrap;
+        height: fit-content;
+    }
+
+    header #links li {
+        /* padding: 20px 0 20px 20px; */
+        padding: 20px 0;
+        width: 50%
+    }
+
+    header #links li a {
+        color: #c600c6;
     }
 }
