@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
-from .forms import ReviewForm
-from .models import Review
+from .forms import ReviewForm, ClientForm
+from .models import Review, Client
 import datetime
+from django.core.mail import send_mail
 
 
 def signupUser(request):
@@ -48,25 +49,25 @@ def logoutUser(request):
 
 
 def home(request):
-    if request.method == 'GET':
-        reviews = Review.objects.all()
-        if reviews:
-            totalReviews = reviews.__len__()
-            averageReviews = 0
-            for review in reviews:
-                averageReviews += review.rating
-                formatedReviews = []
-            averageReviews /= totalReviews
-            averageReviews = int(averageReviews)
-            formatedAverageReviews = []
-            for average in range(averageReviews):
-                formatedAverageReviews.append("")
+        if request.method == 'GET':
+            reviews = Review.objects.all()
+            if reviews:
+                totalReviews = reviews.__len__()
+                averageReviews = 0
+                for review in reviews:
+                    averageReviews += review.rating
+                    formatedReviews = []
+                averageReviews /= totalReviews
+                averageReviews = int(averageReviews)
+                formatedAverageReviews = []
+                for average in range(averageReviews):
+                    formatedAverageReviews.append("")
 
-            return render(request, 'home.html', {
-                "totalReviews": totalReviews,
-                "averageReviews": formatedAverageReviews
-            })
-        return render(request,'home.html')
+                return render(request, 'home.html', {
+                    "totalReviews": totalReviews,
+                    "averageReviews": formatedAverageReviews
+                })
+            return render(request,'home.html')
 
 
 def services(request):
@@ -135,6 +136,29 @@ def addReview(request):
             except ValueError:
                 return render(request, 'addReview.html', {'errors': "you entered in bad information"})
 
+def clients(request):
+    if request.method == "GET":
+        return render(request, )
+
 def addClient(request):
     if request.method == 'GET':
         return render(request, 'addClient.html')
+    else:
+        name = request.POST['name']
+        phone = request.POST['phone']
+        email = request.POST['email']
+        address = request.POST['address']
+        size = request.POST['size']
+        rooms = request.POST['rooms']
+        message = f"name: {name}\ntelephone number: {phone}\nemail address: {email}\nhome address: {address}\nhome squre feet: {size}\nhome rooms: {rooms}"
+        try:
+            client = ClientForm(request.POST)
+            client.save()
+            send_mail(
+                "new client",
+                message,
+                'marianashousecleaningllc@outlook.com',
+                ['brian.hornbrook@gmail.com'])
+            return redirect('/')
+        except ValueError:
+            return render(request, 'home.html', {'errors': "you entered in bad information"})

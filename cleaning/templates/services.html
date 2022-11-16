@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <section id="services">
-    <h3 id="title">WHAT WE DO DURING OUR VISIT EACH TIME AT YOUR HOME</h3>
+    <h3 class="title">WHAT WE DO DURING OUR VISIT EACH TIME AT YOUR HOME</h3>
     <!-- kitchen -->
     <div>
         <img src="{% static 'images/kitchen.jpg' %}" alt="kitchen">
@@ -68,10 +68,14 @@
             <li>Vacuum & mop</li>
         </ul>
     </div>
+    <div class="spacer">
+        <hr>
+    </div>
     <!-- Extras -->
-    <div>
+    <div id="extra">
+        <h3 class="title">Extra Add on Services</h3>
         <img src="{% static 'images/grill.jpg' %}" alt="grill">
-        <h3>Extra Add on Services</h3>
+
         <ul>
             <li>Window Cleaning</li>
             <li>Oven</li>

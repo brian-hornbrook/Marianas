@@ -5,8 +5,9 @@
 <!-- description -->
 <section id="description">
     <h3>PROFESSIONAL CLEANING SERVICE SO YOU CAN FOCUS ON WHAT MATTERS!</h3>
-
-    <img src="{% static 'images/family.jpg' %}" alt="family">
+    <div>
+        <img src="{% static 'images/family.jpg' %}" alt="family">
+    </div>
     <div id="family-area">
     </div>
     <p>We take so much pride in what we do that our clients don't have to worry about the quality of the job!</p>
@@ -201,11 +202,11 @@
         </a>
     </div>
 </section>
-<div class="spacer">
+<!-- <div class="spacer">
     <hr>
-</div>
+</div> -->
 <!-- reviews -->
-<div class="reviews">
+<!-- <div class="reviews">
     {% if totalReviews %}
     <h3>Want to see some reviews</h3>
     <h5>Average</h5>
@@ -231,6 +232,6 @@
         <button type="button" class="btn btn-success">add a review</button>
     </a>
     {% endif %}
-</div>
+</div> -->
 
 {% endblock %}

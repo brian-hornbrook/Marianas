@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="form-container">
+    <div class="form-area">
+        <h2>Signup</h2>
+        {% if errors %}
+        <div class="errors-area">
+            <div class="alert alert-danger" role="alert">
+                {{ errors }}
+            </div>
+        </div>
+        {% endif %}
+        <div id="add-forms-area">
+            <form id="signup" action="/signup" method="POST">
+                <!-- username -->
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="username" placeholder="username">
+                </div>
+                <p>Required. 150 characters or fewer. Leters, digits and @ . + - _ only</p>
+                <!-- password1 -->
+                <div class="mb-3">
+                    <input type="password" class="form-control" name="password1" placeholder="password">
+                </div>
+                <p>Your password can’t be too similar to your other personal information.</p>
+                <p>Your password must contain at least 8 characters.</p>
+                <p>Your password can’t be a commonly used password.</p>
+                <p>Your password can’t be entirely numeric.</p>
+                <!-- password confirmation -->
+                <div class="mb-3">
+                    <input type="password" class="form-control" name="password2" placeholder="password confirmation">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-success">Signup</button>
+                </div>
+                {% csrf_token %}
+            </form>
+        </div>
+
+        <h4>Already have an account</h4>
+        <a href="login">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </a>
+    </div>
+</div>
+
+
+
+{% endblock %}

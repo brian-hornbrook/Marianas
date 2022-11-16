@@ -52,7 +52,7 @@ section ul p {
 }
 
 #description h3 {
-    color: #005DD6;
+    color: #5B9EDC;
     margin: 0 5%;
     text-align: center;
 }
@@ -268,7 +268,7 @@ section ul p {
 
 
 
-/*** DESKTOP ***/
+/*** TABLET ***/
 @media (min-width: 768px) {
     h3 {
         font-size: 1.7rem;
@@ -316,7 +316,7 @@ section ul p {
 
     #business li {
         align-items: center;
-        margin: 20px 0;
+        margin: 20px 0 20px 40px;
     }
 
     #business p {
@@ -399,5 +399,105 @@ section ul p {
         font-size: 1.6rem;
         padding: 5px 25px;
         height: 50px;
+    }
+}
+
+
+/*** DESKTOP ***/
+@media (min-width: 1200px) {
+    h3 {
+        font-size: 2.3rem;
+    }
+
+
+
+    /*** DESCRIPTION ***/
+    #description div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #description img {
+        width: 70%;
+    }
+
+    #description p {
+        font-size: 1.7rem;
+    }
+
+
+
+    /*** BISNINESS ***/
+    #business ul {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center
+    }
+
+    #business li {
+        width: 75%;
+        margin: 20px 0;
+    }
+
+    #business p {
+        font-size: 1.6rem;
+    }
+
+
+
+    /*** SERVICES ***/
+    #services-info ul {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    #services-info ul li {
+        width: 30%;
+    }
+
+    #services-info p {
+        font-size: 1.3rem;
+    }
+
+    #frequency {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #frequency ul {
+        margin: 15px 0;
+        flex-flow: row wrap;
+        width: 50%;
+        list-style-type: disc;
+    }
+
+    #frequency ul li {
+        width: 50%;
+        margin: 10px 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        display: list-item;
+        text-align: center;
+    }
+
+
+
+    /*** QUESTIONS ***/
+    #questions {
+        margin: 10%;
+    }
+
+    #questions h6 {
+        font-size: 1.5rem;
+    }
+
+    #questions p {
+        font-size: 1.5rem;
     }
 }

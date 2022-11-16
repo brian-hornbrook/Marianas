@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="form-container">
+    <div class="form-area">
+        <h2>Contact us for a free quote</h2>
+        {% if errors %}
+        <div class="errors-area">
+            <div class="alert alert-danger" role="alert">
+                {{ errors }}
+            </div>
+        </div>
+        {% endif %}
+        <div id="add-forms-area">
+            <form id="add-forms" action="/addClient" method="POST">
+                <!-- name -->
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="name" placeholder="name">
+                </div>
+                <!-- phone -->
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="phone" placeholder="telephone number">
+                </div>
+                <!-- email -->
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="email" placeholder="email address">
+                </div>
+                <!-- address -->
+                <div class="mb-3">
+                    <textarea class="form-control" rows="3" name="address" placeholder="home address"></textarea>
+                </div>
+                <!-- size -->
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="size" placeholder="home square feet">
+                </div>
+                <!-- rooms -->
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="rooms" placeholder="how many rooms">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

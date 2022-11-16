@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="form-container">
+    <div class="form-area">
+        <h2>Login</h2>
+        {% if errors %}
+        <div class="errors-area">
+            <div class="alert alert-danger" role="alert">
+                {{ errors }}
+            </div>
+        </div>
+        {% endif %}
+        <div id="add-forms-area">
+            <form id="login" action="/login" method="POST">
+                <!-- username -->
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="username" placeholder="username">
+                </div>
+                <!-- password -->
+                <div class="mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="password">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-success">Login</button>
+                </div>
+                {% csrf_token %}
+            </form>
+        </div>
+
+        <h4>Or Create Account</h4>
+        <a href="signup">
+            <button type="submit" class="btn btn-primary">Create Account</button>
+
+        </a>
+    </div>
+</div>
+
+
+
+{% endblock %}

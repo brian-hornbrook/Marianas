@@ -19,10 +19,10 @@ const filledStarFour = document.querySelector('#filled-star-four');
 const filledStarFive = document.querySelector('#filled-star-five');
 
 // toggle account dropdown
-// accountLink.addEventListener('click', () => {
-//     accountContent.classList.toggle('account');
-//     accountContent.classList.toggle('account-content');
-// });
+accountLink.addEventListener('click', () => {
+    accountContent.classList.toggle('account');
+    accountContent.classList.toggle('account-content');
+});
 
 // show one star
 starOne.addEventListener('click', () => {

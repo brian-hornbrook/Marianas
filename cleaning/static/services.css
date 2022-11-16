@@ -9,7 +9,7 @@
     margin: 5%;
 }
 
-#services #title {
+#services .title {
     color: #000070;
 }
 
@@ -38,11 +38,6 @@
     margin: 0;
     color: grey;
 }
-
-
-
-
-
 
 #estimate {
     display: flex;
@@ -111,4 +106,59 @@
     border-radius: 3px;
     margin: 15px;
     padding: 3px 15px;
+}
+
+
+
+/*** TABLET ***/
+@media (min-width: 768px) {
+    #services ul {
+        flex-flow: row wrap;
+        justify-content: left;
+        margin: 0 0 20px 0;
+    }
+
+    #services ul li {
+        font-size: 1.3rem;
+        width: 45%;
+        padding: 10px 10px;
+        margin-left: 20px;
+    }
+}
+
+
+
+/*** DESKTOP ***/
+@media (min-width: 1200px) {
+    #services {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0;
+    }
+
+    #services .spacer {
+        width: 100%;
+    }
+
+    #services div {
+        /* margin-bottom: 100px; */
+        width: 44%;
+        margin: 25px 3%;
+        box-sizing: border-box;
+    }
+
+    #services #extra {
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    #extra img {
+        width: 70%;
+    }
+
+    #extra ul {
+        width: 70%;
+    }
 }

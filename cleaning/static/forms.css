@@ -1,3 +1,7 @@
+h4 {
+    text-align: center;
+}
+
 .form-container {
     display: flex;
     justify-content: center;
@@ -6,10 +10,11 @@
 .form-area {
     margin: 30px;
     padding: 20px 0;
-    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-flow: column;
+    width: 100%;
 }
 
 .form-area h2 {
@@ -42,10 +47,11 @@ form {
     display: flex;
     flex-flow: column;
     align-items: center;
+    width: 100%;
 }
 
 form .mb-3 {
-    width: 100%;
+    width: 80%;
 }
 
 form p {
@@ -54,38 +60,39 @@ form p {
     align-items: center;
     width: 100%;
     text-align: center;
+    color: grey;
 }
 
 form label,
 form input,
 form button {
-    width: 70%;
+    width: 100%;
 }
 
 
 
 /*** REVIEW ***/
-#add-review-area {
+#add-forms-area {
     display: flex;
     justify-content: center;
 }
 
-#add-review-form .mb-3 {
+#add-forms .mb-3 {
     text-align: center;
 }
 
-#add-review-form .mb-3 input,
-#add-review-form .mb-3 textarea {
+#add-forms .mb-3 input,
+#add-forms .mb-3 textarea {
     width: 100%;
 }
 
-#add-review-area .stars {
+#add-forms-area .stars {
     display: flex;
     flex-flow: row nowrap;
     color: #e1c819;
 }
 
-#add-review-area .stars div {
+#add-forms-area .stars div {
     margin: 0 5px;
 }
 
@@ -93,11 +100,17 @@ form button {
     display: none;
 }
 
-#add-review-area .form-control {
-    width: 80%;
+#add-forms-area .form-control {
     border: 1px solid #5B9EDC;
 }
 
-#add-review-area button {
+.form-area button {
     width: 200px;
+}
+
+
+@media (min-width: 768px) {
+    .form-area {
+        width: 50%;
+    }
 }
