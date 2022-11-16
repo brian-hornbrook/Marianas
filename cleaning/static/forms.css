@@ -51,7 +51,7 @@ form {
 }
 
 form .mb-3 {
-    width: 80%;
+    width: 100%;
 }
 
 form p {
@@ -68,6 +68,21 @@ form input,
 form button {
     width: 100%;
 }
+
+
+
+/*** signup ***/
+#signup input {
+    width: 100%;
+}
+
+
+
+/*** login ***/
+#add-forms-area {
+    width: 50%;
+}
+
 
 
 

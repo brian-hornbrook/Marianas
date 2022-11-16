@@ -17,6 +17,7 @@ header ul {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    justify-content: center;
     margin: 0;
 }
 
@@ -44,11 +45,10 @@ header li {
 
 header #brand {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    /* position: relative; */
-    padding: 0;
-    /* width: 100px; */
+    flex-flow: column;
+    justify-content: flex-start;
+    /* justify-content: center; */
+    padding: 5px 0 25px 0px;
 }
 
 header #brand p {
@@ -75,9 +75,8 @@ header #account-link:after {
     display: flex;
     flex-flow: column;
     align-items: center;
-    background-color: #CB2A6B;
+    background-color: #d7d7d7;
     width: 145px;
-    padding-bottom: 5px;
     z-index: 1;
 }
 
@@ -86,9 +85,9 @@ header #account-link:after {
 }
 
 .account-content form button {
-    background-color: #CB2A6B;
+    background-color: #d7d7d7;
     border: 0;
-    color: white;
+    color: #5B9EDC;
     font-size: 0.8rem;
 }
 
@@ -98,7 +97,7 @@ header p {
 }
 
 header #brand a {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin: 0;
     color: white;
 }
@@ -201,11 +200,24 @@ footer #find-us svg {
 /*** TABLET ***/
 @media(min-width: 768px) {
     header li {
-        padding: 25px 0 25px 90px;
+        padding: 25px 0 25px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    header #brand {
+        padding: 15px 0 35px 0;
+    }
+
+    header #brand a {
+        font-size: 1.3rem;
     }
 
     header li a {
         font-size: 1.3rem;
+        /* width: 100%; */
     }
 
     header li a svg {
@@ -253,6 +265,8 @@ footer #find-us svg {
 
     header nav li {
         margin: 0 10px;
+        width: fit-content;
+        padding: 0;
     }
 
     header nav a {
@@ -267,10 +281,6 @@ footer #find-us svg {
         border: 0;
         width: fit-content;
     }
-
-    /* header #brand-img {
-        width: 45%;
-    } */
 
     header #brand {
         width: fit-content;

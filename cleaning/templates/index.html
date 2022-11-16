@@ -20,8 +20,9 @@
     <link rel="stylesheet" href="{% static 'index.css' %}">
     <link rel="stylesheet" href="{% static 'home.css' %}">
     <link rel="stylesheet" href="{% static 'services.css' %}">
-    <link rel="stylesheet" href="{% static 'reviews.css' %}">
+    <link rel="stylesheet" href="{% static 'dipslayInfo.css' %}">
     <link rel="stylesheet" href="{% static 'forms.css' %}">
+    <link rel="stylesheet" href="{% static 'clients.css' %}">
 </head>
 
 <body>
@@ -29,7 +30,12 @@
         <div id="header-area">
             <nav>
                 <ul>
-                    <li id="brand" class="">
+                    <li class="hr">
+                        <a href="/services">
+                            Our Services
+                        </a>
+                    </li>
+                    <li id="brand" class="separator hr">
                         {% if user.is_authenticated %}
                         <a id="account-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -56,11 +62,14 @@
                         </a>
                         {% endif %}
                     </li>
-                    <li class="separator hr">
-                        <a href="/services">
-                            Our Services
+                    {% if user.is_superuser %}
+                    <li class="hr">
+                        <a href="/clients">
+                            your clients
                         </a>
                     </li>
+                    {% endif %}
+
                 </ul>
             </nav>
             <div id="contact">

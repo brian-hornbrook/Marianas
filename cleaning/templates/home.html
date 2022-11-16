@@ -4,6 +4,7 @@
 
 <!-- description -->
 <section id="description">
+    {{ averageReviews }}
     <h3>PROFESSIONAL CLEANING SERVICE SO YOU CAN FOCUS ON WHAT MATTERS!</h3>
     <div>
         <img src="{% static 'images/family.jpg' %}" alt="family">
@@ -206,7 +207,7 @@
     <hr>
 </div> -->
 <!-- reviews -->
-<!-- <div class="reviews">
+<div class="reviews">
     {% if totalReviews %}
     <h3>Want to see some reviews</h3>
     <h5>Average</h5>
@@ -232,6 +233,6 @@
         <button type="button" class="btn btn-success">add a review</button>
     </a>
     {% endif %}
-</div> -->
+</div>
 
 {% endblock %}

@@ -4,7 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 from .forms import ReviewForm, ClientForm
-from .models import Review, Client
+from .models import Review, Client, User
 import datetime
 from django.core.mail import send_mail
 
@@ -50,6 +50,8 @@ def logoutUser(request):
 
 def home(request):
         if request.method == 'GET':
+            aUser = User.objects.filter(username="JacktockinLacktoz")
+            aUser = aUser[0]
             reviews = Review.objects.all()
             if reviews:
                 totalReviews = reviews.__len__()
@@ -62,7 +64,6 @@ def home(request):
                 formatedAverageReviews = []
                 for average in range(averageReviews):
                     formatedAverageReviews.append("")
-
                 return render(request, 'home.html', {
                     "totalReviews": totalReviews,
                     "averageReviews": formatedAverageReviews
@@ -138,7 +139,12 @@ def addReview(request):
 
 def clients(request):
     if request.method == "GET":
-        return render(request, )
+        user = str(request.user)
+        clients = Client.objects.all()
+        if user == "JacktockinLacktoz":
+            return render(request, 'clients.html', {"clients": clients})
+        else:
+            return redirect("/login")
 
 def addClient(request):
     if request.method == 'GET':

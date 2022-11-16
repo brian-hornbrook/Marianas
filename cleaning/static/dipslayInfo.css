@@ -1,0 +1,55 @@
+#clients {
+    display: flex;
+    justify-content: center;
+}
+
+#overview #add-review {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#overview button {
+    height: 25px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    margin: 50px 0;
+}
+
+.card-header {
+    padding: 7px 20px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.card-body .name {
+    display: flex;
+    flex-flow: row nowrap;
+    color: #00000082;
+}
+
+.card-body .name span {
+    margin: 0 5px;
+    color: black;
+}
+
+
+
+/*** TABLET ***/
+@media (min-width: 768px) {
+    #clients #content {
+        display: flex;
+        flex-flow: row wrap;
+        width: 80%;
+        justify-content: space-around;
+    }
+
+    #clients .card {
+        width: 50%;
+    }
+}

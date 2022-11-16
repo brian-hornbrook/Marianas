@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<section id="clients">
+    <div id="content">
+        <!-- clients -->
+        {% for client in clients %}
+        <!-- each client -->
+        <div class="card border-info mb-3" style="max-width: 18rem;">
+            <div class="card-header">{{ client.name }}</div>
+            <div class="card-body">
+                <p class="name" ><span>Phone: </span>{{ client.phone }}</p>
+                <p class="name" ><span>Email: </span>{{ client.email }}</p>
+                <p class="name" ><span>Address: </span>{{ client.address }}</p>
+                <p class="name" ><span>Size: </span>{{ client.size }} square feet</p>
+                <p class="name" ><span>Roms: </span>{{ client.rooms }}</p>            </div>
+          </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
