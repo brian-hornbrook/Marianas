@@ -18,7 +18,7 @@ from django.urls import path
 from cleaning import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('signup', views.signupUser),
     path('login', views.loginUser),
     path('logout', views.logoutUser),
@@ -29,5 +29,6 @@ urlpatterns = [
     path('reviews', views.reviews),
     path('addreview', views.addReview),
     path('clients', views.clients),
-    path('addClient', views.addClient)
+    path('addClient', views.addClient),
+    path('test', views.test)
 ]

@@ -87,9 +87,101 @@ form button {
 
 
 /*** REVIEW ***/
+.reviews h4 {
+    margin: 10px;
+}
+
+.reviews #add-review button {
+    height: 30px;
+    border-radius: 15px;
+}
+
+.reviews #content {
+    margin: 30px 0 20px 0;
+}
+
+.reviews .display-area {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    margin: 20px 0;
+    border-top: 1px solid #00000024;
+    padding-top: 10px;
+}
+
+.reviews .review-icon {
+    margin: 0 15px 0 0;
+}
+
+.reviews .user-icon {
+    width: 35px;
+    height: 35px;
+    letter-spacing: 15px;
+    padding-left: 10.5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: #5B9EDC;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.reviews .content-area {
+    width: 100%;
+}
+
+.reviews .review-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reviews .info {
+    display: flex;
+    flex-flow: row;
+}
+
+.reviews .user {
+    margin-left: 10px;
+    font-weight: 900;
+}
+
+.reviews .date {
+    font-size: 0.8rem;
+    color: #0009;
+}
+
+.reviews .review-content {
+    justify-content: flex-start;
+    margin-top: 7px;
+}
+
+
+
+/*** ADD REVIEW ***/
+.form-container {
+    text-align: center;
+}
+
 #add-forms-area {
     display: flex;
     justify-content: center;
+}
+
+#add-review-area .mb-3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#add-review-area .stars {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#add-review-area .stars svg {
+    color: #e1c819;
 }
 
 #add-forms .mb-3 {
@@ -124,8 +216,77 @@ form button {
 }
 
 
+
+/*** TABLET ***/
 @media (min-width: 768px) {
-    .form-area {
+
+    /*** REVIEWS ***/
+    .reviews #content {
+        /* width: 50%; */
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .reviews .display-area {
         width: 50%;
+    }
+}
+
+
+
+/*** DESKTOP ***/
+@media (min-width: 1200px) {
+    .reviews h2 {
+        font-size: 2.5rem;
+    }
+
+    .reviews h4 {
+        font-size: 1.7rem;
+    }
+
+    .reviews .stars svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .reviews p {
+        font-size: 1.3rem;
+    }
+
+    .reviews #add-review button {
+        padding: 30px 30px;
+        border-radius: 20px;
+    }
+
+    .reviews .display-area {
+        width: 60%;
+    }
+
+    .reviews .user-icon {
+        height: 50px;
+        width: 50px;
+        padding-left: 15px;
+        font-size: 1.8rem;
+    }
+
+    .reviews .date {
+        font-size: 1.2rem;
+    }
+
+
+
+    /*** ADD REVIEW ***/
+    .form-container h2,
+    #add-review-area {
+        width: 100%;
+    }
+
+    .form-area {
+        width: 60%;
+    }
+
+    #add-review-area .stars {
+        width: 200px;
     }
 }

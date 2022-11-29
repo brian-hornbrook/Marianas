@@ -9,6 +9,9 @@ import datetime
 from django.core.mail import send_mail
 
 
+def test(request):
+    return render(request, 'test.html')
+
 def signupUser(request):
     if request.method == 'GET':
         return render(request, 'signupUser.html', {'form': UserCreationForm()})
@@ -56,9 +59,16 @@ def home(request):
             if reviews:
                 totalReviews = reviews.__len__()
                 averageReviews = 0
+
                 for review in reviews:
                     averageReviews += review.rating
                     formatedReviews = []
+                    review.datecreated = review.datecreated.strftime("%B %d, %Y")
+                    averageReviews += review.rating
+                    formatedReviews = []
+                    for rating in range(review.rating):
+                        formatedReviews.append("")
+                        review.rating = formatedReviews
                 averageReviews /= totalReviews
                 averageReviews = int(averageReviews)
                 formatedAverageReviews = []
@@ -66,7 +76,8 @@ def home(request):
                     formatedAverageReviews.append("")
                 return render(request, 'home.html', {
                     "totalReviews": totalReviews,
-                    "averageReviews": formatedAverageReviews
+                    "averageReviews": formatedAverageReviews,
+                    "reviews": reviews
                 })
             return render(request,'home.html')
 
@@ -164,7 +175,7 @@ def addClient(request):
                 "new client",
                 message,
                 'marianashousecleaningllc@outlook.com',
-                ['brian.hornbrook@gmail.com'])
+                ['marianashousecleaningllc@gmail.com'])
             return redirect('/')
         except ValueError:
             return render(request, 'home.html', {'errors': "you entered in bad information"})

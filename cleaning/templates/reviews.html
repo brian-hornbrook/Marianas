@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block content %}
-<section id="reviews" class="reviews">
+<section class="reviews" class="reviews">
     {% if reviews %}
     <div id="overview">
-        <h3>Check out all our reviews</h3>
-        <h5>Average</h5>
+        <h2>Check out all our reviews</h2>
+        <h4>Average</h4>
         <p>
             <span id="star-area">
                 {% for star in averageReviews %}
@@ -30,7 +30,7 @@
         <!-- each review -->
         <div class="display-area">
             <div class="review-icon">
-                <span>{{ review.user|truncatechars:2 }}</span>
+                <span class="user-icon">{{ review.user|truncatechars:2 }}</span>
             </div>
             <div class="content-area">
                 <div class="review-info">
@@ -55,10 +55,12 @@
         </div>
         {% endfor %}
     </div>
-    {% endif %}
+    {% else %}
     <h3>No reviews Yet</h3>
     <a id="see-reviews" href="/addreview">
         <button type="button" class="btn btn-success">add a review</button>
     </a>
+    {% endif %}
+
 </section>
 {% endblock %}

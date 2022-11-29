@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Review, Client
 
 class ReviewAdmin(admin.ModelAdmin):
-    readonly_fields = ('datecreated', )
+    readonly_fields = ( )
 
 # classClientAdmin(admin.ModelAdmin):
 
