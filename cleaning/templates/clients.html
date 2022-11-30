@@ -3,6 +3,8 @@
 
 {% block content %}
 <section id="clients">
+    {% if clients %}
+    <h3>Your Clients ({{ totalClients }})</h3>
     <div id="content">
         <!-- clients -->
         {% for client in clients %}
@@ -19,5 +21,8 @@
         </div>
         {% endfor %}
     </div>
+    {% else %}
+    <h3>No Clients Yet</h3>
+    {% endif %}
 </section>
 {% endblock %}

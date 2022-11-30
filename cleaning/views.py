@@ -152,8 +152,9 @@ def clients(request):
     if request.method == "GET":
         user = str(request.user)
         clients = Client.objects.all()
+        totalClients = clients.__len__()
         if user == "JacktockinLacktoz":
-            return render(request, 'clients.html', {"clients": clients})
+            return render(request, 'clients.html', {"clients": clients, "totalClients": totalClients})
         else:
             return redirect("/login")
 
@@ -179,3 +180,6 @@ def addClient(request):
             return redirect('/')
         except ValueError:
             return render(request, 'home.html', {'errors': "you entered in bad information"})
+
+def payment(request):
+    return render(request, 'payment.html')

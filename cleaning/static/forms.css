@@ -217,6 +217,16 @@ form button {
 
 
 
+/*** CLIENTS ***/
+#clients {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 30px 0;
+}
+
+
+
 /*** TABLET ***/
 @media (min-width: 768px) {
 
