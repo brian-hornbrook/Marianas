@@ -43,6 +43,14 @@ header li {
     box-sizing: border-box;
 }
 
+#header-phone-off {
+    display: none;
+}
+
+#footer-phone-off {
+    display: none;
+}
+
 header #brand {
     display: flex;
     flex-flow: column;
@@ -75,7 +83,6 @@ header #account-link:after {
     display: flex;
     flex-flow: column;
     align-items: center;
-    background-color: #d7d7d7;
     width: 145px;
     z-index: 1;
 }
@@ -85,10 +92,9 @@ header #account-link:after {
 }
 
 .account-content form button {
-    background-color: #d7d7d7;
+    background-color: #CB2A6B;
     border: 0;
-    color: #5B9EDC;
-    font-size: 0.8rem;
+    color: pink;
 }
 
 header p {
@@ -207,6 +213,10 @@ footer #find-us svg {
         text-align: center;
     }
 
+    .account-content form button {
+        font-size: 1.2rem;
+    }
+
     header #brand {
         padding: 15px 0 35px 0;
     }
@@ -227,6 +237,22 @@ footer #find-us svg {
 
     header #separator {
         height: 85px;
+    }
+
+    #header-phone-on {
+        display: none;
+    }
+
+    #header-phone-off {
+        display: block;
+    }
+
+    #footer-phone-on {
+        display: none;
+    }
+
+    #footer-phone-off {
+        display: flex;
     }
 }
 
@@ -328,7 +354,7 @@ footer #find-us svg {
         flex-flow: row wrap;
     }
 
-    header #contact #phone {
+    header #contact #header-phone-off {
         background-color: #CB2A6B;
         color: white;
         padding: 10px 20px;
