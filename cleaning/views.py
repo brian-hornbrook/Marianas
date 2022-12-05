@@ -10,8 +10,6 @@ from django.core.mail import send_mail
 
 # stripe
 import stripe
-stripe.api_key = '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'
-
 
 def test(request):
     return render(request, 'test.html')
