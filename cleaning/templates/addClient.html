@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="form-container">
+<div id="quote" class="form-container">
     <div class="form-area">
         <h2>Contact us for a free quote</h2>
         {% if errors %}
@@ -14,7 +14,7 @@
         </div>
         {% endif %}
         <div id="add-forms-area">
-            <form id="add-forms" action="/addClient" method="POST">
+            <form id="add-forms" action="/addclient" method="POST">
                 <!-- name -->
                 <div class="mb-3">
                     <input type="text" class="form-control" name="name" placeholder="name">
@@ -38,6 +38,15 @@
                 <!-- rooms -->
                 <div class="mb-3">
                     <input type="text" class="form-control" name="rooms" placeholder="how many rooms">
+                </div>
+                <!-- terms -->
+                <div id="terms" class="mb-3">
+                    <label for="terms">You must agree to the
+                        <a href="/terms" target="_blank">terms and conditions</a>
+                        .
+                    </label>
+                    <input type="checkbox" name="terms">
+                    <!-- <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> -->
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-success">Submit</button>

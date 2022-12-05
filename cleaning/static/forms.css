@@ -51,7 +51,7 @@ form {
 }
 
 form .mb-3 {
-    width: 100%;
+    width: 70%;
 }
 
 form p {
@@ -163,11 +163,6 @@ form button {
     text-align: center;
 }
 
-#add-forms-area {
-    display: flex;
-    justify-content: center;
-}
-
 #add-review-area .mb-3 {
     display: flex;
     justify-content: space-between;
@@ -193,6 +188,24 @@ form button {
     width: 100%;
 }
 
+#add-forms #terms {
+    display: flex;
+    flex-flow: row;
+}
+
+#add-forms #terms label {
+    width: fit-content;
+}
+
+#add-forms #terms a {
+    color: blue;
+}
+
+#add-forms #terms input {
+    width: fit-content;
+    margin: 0 5px;
+}
+
 #add-forms-area .stars {
     display: flex;
     flex-flow: row nowrap;
@@ -213,6 +226,18 @@ form button {
 
 .form-area button {
     width: 200px;
+}
+
+
+/*** QUOTE ***/
+#quote #add-forms-area {
+    /* display: flex;
+    justify-content: center; */
+    width: 100%;
+}
+
+#quote #terms {
+    width: 100%;
 }
 
 

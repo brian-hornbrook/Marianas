@@ -29,7 +29,9 @@ urlpatterns = [
     path('reviews', views.reviews),
     path('addreview', views.addReview),
     path('clients', views.clients),
-    path('addClient', views.addClient),
+    path('addclient', views.addClient),
+    path('terms', views.terms),
     path('payment', views.payment),
+    path('create-checkout-session', views.createSession),
     path('test', views.test)
 ]

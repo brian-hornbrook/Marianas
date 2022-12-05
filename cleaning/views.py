@@ -8,6 +8,10 @@ from .models import Review, Client, User
 import datetime
 from django.core.mail import send_mail
 
+# stripe
+import stripe
+stripe.api_key = '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'
+
 
 def test(request):
     return render(request, 'test.html')
@@ -149,7 +153,7 @@ def addReview(request):
                 return render(request, 'addReview.html', {'errors': "you entered in bad information"})
 
 def clients(request):
-    if request.method == "GET":
+    if request.method == 'GET':
         user = str(request.user)
         clients = Client.objects.all()
         totalClients = clients.__len__()
@@ -157,6 +161,10 @@ def clients(request):
             return render(request, 'clients.html', {"clients": clients, "totalClients": totalClients})
         else:
             return redirect("/login")
+
+def terms(request):
+    if request.method == 'GET':
+        return render(request, 'terms.html')
 
 def addClient(request):
     if request.method == 'GET':
@@ -169,17 +177,52 @@ def addClient(request):
         size = request.POST['size']
         rooms = request.POST['rooms']
         message = f"name: {name}\ntelephone number: {phone}\nemail address: {email}\nhome address: {address}\nhome squre feet: {size}\nhome rooms: {rooms}"
-        try:
-            client = ClientForm(request.POST)
-            client.save()
-            send_mail(
-                "new client",
-                message,
-                'marianashousecleaningllc@outlook.com',
-                ['marianashousecleaningllc@gmail.com'])
-            return redirect('/')
-        except ValueError:
-            return render(request, 'home.html', {'errors': "you entered in bad information"})
+        terms = request.POST.get("terms")
+
+        if name == "" and phone == "" or name == "" and email == "":
+            return render(request, 'addClient.html', {'errors': "you must enter your name and phone number or email"})
+
+        elif terms == 'on':
+            try:
+                client = ClientForm(request.POST)
+                client.save()
+                # send_mail(
+                #     "new client",
+                #     message,
+                #     'marianashousecleaningllc@outlook.com',
+                #     ['marianashousecleaningllc@gmail.com'])
+                return redirect('/')
+            except ValueError:
+                return render(request, 'home.html', {'errors': "you entered in bad information"})
+        else:
+            return render(request, 'addClient.html', {'errors': "you didn't enter any fields"})
 
 def payment(request):
     return render(request, 'payment.html')
+
+
+def createSession(request):
+    YOUR_DOMAIN = 'http://localhost:8000'
+    if request.method == 'POST':
+        try:
+            checkout_session = stripe.checkout.Session.create(
+                line_items=[
+                    {
+                        # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+                        'price': '0.01',
+                        'quantity': 1,
+                    },
+                ],
+                mode='payment',
+                success_url=YOUR_DOMAIN + '/success.html',
+                cancel_url=YOUR_DOMAIN + '/cancel.html',
+                automatic_tax={'enabled': True},
+            )
+            print('success')
+        except Exception as e:
+            print(e)
+            print('************************************')
+            return redirect('/payment')
+        return redirect(checkout_session.url, code=303)
+    if request.method == 'GET':
+        redirect('/method')
