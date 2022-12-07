@@ -8,11 +8,13 @@ from .models import Review, Client, User
 import datetime
 from django.core.mail import send_mail
 
-# stripe
-import stripe
 
 def test(request):
     return render(request, 'test.html')
+
+
+def home(request):
+    return render(request, 'home.html')
 
 def signupUser(request):
     if request.method == 'GET':
@@ -55,19 +57,18 @@ def logoutUser(request):
 
 def home(request):
         if request.method == 'GET':
-            aUser = User.objects.filter(username="JacktockinLacktoz")
-            aUser = aUser[0]
-            reviews = Review.objects.all()
+            allReviews = Review.objects.order_by('-datecreated')
+            reviews = allReviews[:3]
             if reviews:
                 totalReviews = reviews.__len__()
                 averageReviews = 0
-
                 for review in reviews:
                     averageReviews += review.rating
                     formatedReviews = []
                     review.datecreated = review.datecreated.strftime("%B %d, %Y")
-                    averageReviews += review.rating
-                    formatedReviews = []
+                    userName = review.user
+                    userName = userName[0]
+                    review.userName = userName
                     for rating in range(review.rating):
                         formatedReviews.append("")
                         review.rating = formatedReviews
@@ -88,14 +89,6 @@ def services(request):
     return render(request, 'services.html')
 
 
-def about(request):
-    return render(request, 'about.html')
-
-
-def services(request):
-    return render(request, 'services.html')
-
-
 def reviews(request):
     if request.method == 'GET':
         reviews = Review.objects.all()
@@ -106,6 +99,9 @@ def reviews(request):
                 averageReviews += review.rating
                 formatedReviews = []
                 review.datecreated = review.datecreated.strftime("%B %d, %Y")
+                userName = review.user
+                userName = userName[0]
+                review.userName = userName
                 for rating in range(review.rating):
                     formatedReviews.append("")
                     review.rating = formatedReviews
@@ -129,12 +125,17 @@ def addReview(request):
         return render(request, 'addReview.html')
     else:
         rating = request.POST['rating']
-        guest = request.POST['guest']
+        guest = request.POST.get('guest')
+        if guest == None:
+            user = request.user
+        title = request.POST['title']
         description = request.POST['description']
         if rating == "":
             return render(request, 'addReview.html', {'errors': "you must choose a star rating"})
         elif guest == "":
             return render(request, 'addReview.html', {'errors': "you must enter your guest name"})
+        elif title == "":
+            return render(request, 'addReview.html', {'errors': "you must enter a title"})
         elif description == "":
             return render(request, 'addReview.html', {'errors': "you must not leave the review section blank"})
         else:
@@ -184,11 +185,11 @@ def addClient(request):
             try:
                 client = ClientForm(request.POST)
                 client.save()
-                # send_mail(
-                #     "new client",
-                #     message,
-                #     'marianashousecleaningllc@outlook.com',
-                #     ['marianashousecleaningllc@gmail.com'])
+                send_mail(
+                    "new client",
+                    message,
+                    'marianashousecleaningllc@outlook.com',
+                    ['marianashousecleaningllc@gmail.com'])
                 return redirect('/')
             except ValueError:
                 return render(request, 'home.html', {'errors': "you entered in bad information"})

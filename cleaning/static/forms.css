@@ -110,17 +110,18 @@ form button {
 }
 
 .reviews .review-icon {
-    margin: 0 15px 0 0;
+    margin: 0 14px 0 0;
 }
 
 .reviews .user-icon {
     width: 35px;
     height: 35px;
     letter-spacing: 15px;
-    padding-left: 10.5px;
-    overflow: hidden;
+    /*padding-left: 10.5px;*/
+    /*overflow: hidden;*/
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #5B9EDC;
     border-radius: 50%;
     color: white;

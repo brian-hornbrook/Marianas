@@ -24,8 +24,6 @@ urlpatterns = [
     path('logout', views.logoutUser),
     path('', views.home),
     path('services', views.services),
-    path('about', views.about),
-    path('services', views.services),
     path('reviews', views.reviews),
     path('addreview', views.addReview),
     path('clients', views.clients),

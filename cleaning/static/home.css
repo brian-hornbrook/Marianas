@@ -266,6 +266,19 @@ section ul p {
     display: flex;
 }
 
+.reviews #review-content {
+    text-align: left;
+}
+
+.reviews #review-content p {
+    justify-content: left;
+    margin: 10px 0;
+}
+
+.reviews #review-content strong {
+    /*font-size: 1.1rem;*/
+}
+
 
 
 /*** TABLET ***/

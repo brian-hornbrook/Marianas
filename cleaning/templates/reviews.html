@@ -30,7 +30,7 @@
         <!-- each review -->
         <div class="display-area">
             <div class="review-icon">
-                <span class="user-icon">{{ review.user|truncatechars:2 }}</span>
+                <span class="user-icon">{{ review.userName }}</span>
             </div>
             <div class="content-area">
                 <div class="review-info">
@@ -50,7 +50,14 @@
                         {{ review.datecreated }}
                     </div>
                 </div>
-                <p class="review-content">{{ review.description }}</p>
+                <div id="review-content">
+                    {% if review.title %}
+                    <p><strong>{{ review.title }}</strong></p>
+                    {% endif %}
+                    {% if review.description %}
+                    <p>{{ review.description }}</p>
+                    {% endif %}
+                </div>
             </div>
         </div>
         {% endfor %}
