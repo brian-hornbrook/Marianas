@@ -116,9 +116,6 @@ form button {
 .reviews .user-icon {
     width: 35px;
     height: 35px;
-    letter-spacing: 15px;
-    /*padding-left: 10.5px;*/
-    /*overflow: hidden;*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -302,7 +299,6 @@ form button {
     .reviews .user-icon {
         height: 50px;
         width: 50px;
-        padding-left: 15px;
         font-size: 1.8rem;
     }
 
